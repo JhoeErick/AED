@@ -1,6 +1,6 @@
 package libs;
 
-import libs.Entrada;
+
 
 public class Matrizes {
     public static int[][] somar(int[][] mA, int[][] mB) {

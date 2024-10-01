@@ -6,27 +6,26 @@ import java.util.Scanner;
 
 public class aula30 {
     public static void aula() {
-        //ex1();
+        ex1();
         ex2();
-        //ex3();
-    // }
-    // public static void ex1() {
-    //     String nome_arquivo = "texte.txt";
-    //     try{
-    //         FileWriter arquivo = new FileWriter(nome_arquivo);
-    //         arquivo.write("Algoritmos\n");
-    //         for (int i = 1; i <=30; i++) {
-    //             arquivo.write(i + " wilian incomoda muita gente "+ i + 1+" incomoda muito mais\n");
-    //         }
-    //         arquivo.close();
-    //     }catch(Exception e){
-    //         System.err.println("Erro");
-    //         System.err.println(e);
-    //     }
+        
+    }
+    public static void ex1() {
+        String nome_arquivo = "texte.txt";
+        try{
+            FileWriter arquivo = new FileWriter(nome_arquivo);
+            arquivo.write("Algoritmos\n");
+            for (int i = 1; i <=30; i++) {
+                arquivo.write(i + " wilian incomoda muita gente "+ i + 1+" incomoda muito mais\n");
+            }
+            arquivo.close();
+        }catch(Exception e){
+            System.err.println("Erro");
+            System.err.println(e);
+        }
      }
     public static void ex2() {
         int i;
-        String nome;
         int valor;
         
 

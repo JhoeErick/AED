@@ -1,7 +1,6 @@
 
 package libs;
 
-import libs.Entrada;
 
 public class Vetores {
     public static int[] alocarInteiro(int n) {

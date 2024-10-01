@@ -1,5 +1,5 @@
 package libs;
-import libs.Entrada;
+
 
 public class Matematica {
 
