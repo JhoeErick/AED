@@ -57,8 +57,7 @@ public class Bim2R2 {
 
         // modifique para o retorno correto
         // #######################################
-
-        return 0; // modifique para o retorno correto
+        // modifique para o retorno correto
         // #######################################
     }
 

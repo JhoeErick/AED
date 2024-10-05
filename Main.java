@@ -1,4 +1,5 @@
 import aulas.*;
+import Trabalhos.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,6 +12,9 @@ public class Main {
         //aula27.aula();
         //aula28.aula();
         //aula30.aula();
-        Trabalhos.Bim2R2.testesMDCRec();
+        //Trabalhos.Bim2R2.testesMDCRec();
+        T3.mostrarInteiros();
+    
+
     }
 }
