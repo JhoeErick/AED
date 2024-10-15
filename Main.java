@@ -13,7 +13,8 @@ public class Main {
         //aula28.aula();
         //aula30.aula();
         //Trabalhos.Bim2R2.testesMDCRec();
-        T3.mostrarInteiros();
+        Trabalhos.T3.EX3();
+    
     
 
     }

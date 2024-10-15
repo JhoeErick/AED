@@ -84,9 +84,6 @@ public class Matrizes {
         return m;
     }
 
-    // De maneira semelhante desenvolva a função matrizNovaString, que retorna uma
-    // matriz com valores do tipo caractere. A matriz retornada deve ter seus
-    // elementos preenchidos com "" (sequência de caracteres vazia).
     public static String[][] matrizNovaString(int n_linhas, int n_colunas) {
         String[][] m = new String[n_linhas][n_colunas];
         for (int i = 0; i < n_linhas; i++) {
