@@ -174,10 +174,86 @@ public class T3 {
         int[] v1 = {1, 2, 3, 4};
         int[] v2 = {6, 7, 8, 9};
         int[] resultado = uniaoVetores(v1, v2);
-        mostrarVetor(resultado);
+        mostrarVetor7(resultado);
         Entrada.fechar();
         System.out.println();
 }
 
+    public static int[] uniaoVetores(int[] v1, int[] v2) {
+        int[] vc = new int[v1.length + v2.length];
+        int indice = 0;
+        for (int i = 0; i < v1.length; i++) {
+            vc[indice] = v1[i];
+            indice++;
+        }
+        for (int i = 0; i < v2.length; i++) {
+            vc[indice] = v2[i];
+            indice++;
+        }
+        return vc;
+    }
+    public static void mostrarVetor7(int[] v) {
+        for (int b : v) {
+            System.out.print(b + " ");
+        }
+    }
+       
+    
+    
+//     public static void EX8(){
+//         System.out.println("--Trabalho 3 Bim - Exercicio 8--");
+//         Entrada.abrir();
+//         int[] v1 = {1, 2, 3, 4};
+//         int[] v2 = {6, 7, 8, 9};
+//         int[] resultado = interseccaoVetores(v1, v2);
+//         mostrarVetor(resultado);
+//         Entrada.fechar();
+//         System.out.println();
+//         desisto tbm, não sei! 
+// }
+//     public static void EX9(){
+//         System.out.println("--Trabalho 3 Bim - Exercicio 9--");
+//         Entrada.abrir();
+//         int[] v1 = {1, 2, 3, 4, 5};
+//         int[] v2 = {4, 5, 6, 7, 8};
+//         int[] resultado = diferencaVetores(v1, v2);
+//         mostrarVetor(resultado);
+//         Entrada.fechar();
+//         System.out.println();
+//         desisto tbm, não sei!
+// }
+    public static void EX10(){
+        System.out.println("--Trabalho 3 Bim - Exercicio 10--");
+        Entrada.abrir();
+        int n = 5;
+        int[][] resultado = trianguloPascal(n);
+        mostrarMatriz(resultado);
+        Entrada.fechar();
+        System.out.println();
+    }
+    public static int[][] trianguloPascal(int n) {
+        int[][] triangulo = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
+                if (j == 0 || j == i) {
+                    triangulo[i][j] = 1;
+                } else {
+                    triangulo[i][j] = triangulo[i - 1][j - 1] + triangulo[i - 1][j];
+                }
+            }
+        }
+        return triangulo;
+    }
+    public static void mostrarMatriz(int[][] matriz) {
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+   
+         
    
 

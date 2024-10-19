@@ -13,7 +13,7 @@ public class Main {
         //aula28.aula();
         //aula30.aula();
         //Trabalhos.Bim2R2.testesMDCRec();
-        Trabalhos.T3.EX6();
+        Trabalhos.T3.EX7();
     
     
 
