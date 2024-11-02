@@ -12,8 +12,9 @@ public class Main {
         //aula27.aula();
         //aula28.aula();
         //aula30.aula();
+        aula34.aula();
         //Trabalhos.Bim2R2.testesMDCRec();
-        Trabalhos.T3.EX7();
+        //Trabalhos.T3.EX7();
     
     
 
