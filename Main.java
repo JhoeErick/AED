@@ -12,7 +12,8 @@ public class Main {
         //aula27.aula();
         //aula28.aula();
         //aula30.aula();
-        aula34.aula();
+        //aula34.aula();
+        aula35.aula();
         //Trabalhos.Bim2R2.testesMDCRec();
         //Trabalhos.T3.EX7();
     
