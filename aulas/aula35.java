@@ -59,8 +59,12 @@ public class aula35 {
     }
 
     public static double calcularPolonesaReversa(String[] valores) {
-        Stack<Double> pilha = new Stack<>();
-        pilha.add(2);
+        Stack<Double> operandos = new Stack<>();
+        double num1, num2;
+
+
+
+        return operandos.pop();
 
         
     }
