@@ -46,7 +46,7 @@ public class aula36 {
     System.out.println("---------");
     lista.add(3,500);
     lista.set(5,400);
-    
+
     for(i=0; i<lista.size(); i++){
         x = lista.get(i);
         System.out.printf("[%d] %d\n", i,x);
@@ -80,9 +80,4 @@ public class aula36 {
         Iterator<Integer> it = conjunto.iterator();
         System.out.println((it.hashCode()));
         }
-
-        
-
-
-
-    }
+}

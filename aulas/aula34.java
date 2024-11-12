@@ -45,7 +45,7 @@ public class aula34 {
         long tempo_inicio = tempo.medirTempoIniciar();
         pos = Vetores.BuscaSequencial(v, x);
         double tempo_segundos = tempo.medirTempoFinalizarSegundos(tempo_inicio);
-        
+
         if (pos != -1) {
             System.out.println("Valor " + x + " encontrado na posição " + pos);
         } else {
@@ -58,16 +58,16 @@ public class aula34 {
     public static void ex3(){
         for(int i=0;i<10;i++){
         Entrada.abrir();
-        
+
         int [] v = Vetores.gerarValoresAleatorios(10000000, 0, 100000);
         int x = Entrada.lerInt("digite um numero para a busca");
 
         int pos;
-        
+
         long tempo_inicio = tempo.medirTempoIniciar();
         pos = Vetores.BuscaSequencial(v, x);
         double tempo_segundos = tempo.medirTempoFinalizarSegundos(tempo_inicio);
-        
+
         if (pos != -1) {
             System.out.println("Valor " + x + " encontrado na posição " + pos);
         } else {
@@ -89,7 +89,7 @@ public class aula34 {
         long tempo_inicio = tempo.medirTempoIniciar();
         pos = Vetores.BuscaSequencial(v, x);
         double tempo_segundos = tempo.medirTempoFinalizarSegundos(tempo_inicio);
-        
+
         if (pos != -1) {
             System.out.println("Valor " + x + " encontrado na posição " + pos);
         } else {
@@ -100,7 +100,7 @@ public class aula34 {
         Entrada.fechar();
     }
 }
-    
-    
-    
+
+
+
 
