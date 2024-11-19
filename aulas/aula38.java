@@ -39,7 +39,7 @@ public class aula38 {
     }
 
     public static void ex03() {
-        //junte 2 vetores e ordene eles num 3 vetor
+        //merge sort
         int[] va= {0,2,4,7,8};
         int[] vb= {1,3,5};
         int[] vc=new int[va.length+vb.length];
