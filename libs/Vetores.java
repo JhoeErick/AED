@@ -199,6 +199,39 @@ public class Vetores {
     }
 
 
-}
 
+public static void trocar(int[]v,int i, int j){
+    int tmp;
+    tmp= v[i];
+    v[i]=v[j];
+    v[j]=tmp;
+    
+    }
+    
+    public static void ordenarInsertionSort(int[] v){
+        int i,j;
+        for(i=1;i<v.length;i++){
+            j=i;
+            while(j>0 && v[j]<v[j-1]){
+                trocar(v,j,j-1);
+                j--;
+            }
+        }
+    }
+    
+    public static void ordenarSelectionSort(int[] v){
+        int i,j,menor_val,menor_pos;
+        for(i=0;i<v.length-1;i++){
+            menor_val=v[i];
+            menor_pos=i;
+            for(j=i+1;j<v.length;j++){
+                if(v[j]<menor_val){
+                    menor_val=v[j];
+                    menor_pos=j;
+                }
+            }
+                trocar(v,i,menor_pos);
+            }
+        }
+    }
 

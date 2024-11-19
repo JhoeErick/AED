@@ -1,259 +1,146 @@
 package Trabalhos;
-
 import libs.Entrada;
-
 public class T3 {
-    public static void EX1() {
-        System.out.println("--Trabalho 3 Bim - Exercicio 1--");
-        Entrada.abrir();
-        int[] vetor = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        char separador = Entrada.lerChar("Qual tipo de separador você deseja?");
-        mostrarInteiros(vetor, separador);
-        Entrada.fechar();
-    }
-
-    public static void mostrarInteiros(int[] vetor, char separador) {
+    public static void mostrarInteiros(int[] vetor, char sep) {
         for (int i = 0; i < vetor.length; i++) {
             System.out.print(vetor[i]);
             if (i < vetor.length - 1) {
-                System.out.print(separador);
+                System.out.print(sep);
             }
         }
-        System.out.println();
-
+        System.out.println(); 
     }
+    public static int[] filtrarMaiores(int[] vetor, int x) {
+        // Contar quantos elementos são maiores que x
+        int count = 0;
+        for (int num : vetor) { //"Para cada elemento do array vetor, atribua o valor à variável num e execute o bloco de código."
 
-    public static void EX2() {
-        System.out.println("--Trabalho 3 Bim - Exercicio 2--");
-        Entrada.abrir();
-        int[] vetor = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-        int valor = Entrada.lerInt("Qual valor deseja filtrar?");
-        filtrarMaiores(vetor, valor);
-        Entrada.fechar();
-    }
 
-    public static void filtrarMaiores(int[] vetor, int valor) {
-        int contador = 0;
-        for (int i = 0; i < vetor.length; i++) {
-            if (vetor[i] > valor) {
-                contador++;
-            }
-        }
-        int[] resultado = new int[contador];
-        int indice = 0;
-        for (int i = 0; i < vetor.length; i++) {
-            if (vetor[i] > valor) {
-                resultado[indice] = vetor[i];
-                indice++;
-            }
-        }
-        for (int i = 0; i < resultado.length; i++) {
-            System.out.print(resultado[i] + " ");
-        }
-        System.out.println();
-
-    }
-
-    public static void EX3() {
-        System.out.println("--Trabalho 3 Bim - Exercicio 2--");
-        Entrada.abrir();
-        int[] vetor = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-        int valor = Entrada.lerInt("Qual valor deseja filtrar?");
-        filtrarMaiores(vetor, valor);
-        Entrada.fechar();
-    }
-
-    public static void filtrarMenores(int[] vetor, int valor) {
-        int contador = 0;
-
-        for (int i = 0; i < vetor.length; i++) {
-            if (vetor[i] < valor) {
-                contador++;
-            }
-        }
-        int[] resultado = new int[contador];
-        int indice = 0;
-        for (int i = 0; i < vetor.length; i++) {
-            if (vetor[i] < valor) {
-                resultado[indice] = vetor[i];
-                indice++;
+            if (num > x) {
+                count++;
             }
         }
 
-        for (int i = 0; i < resultado.length; i++) {
-            System.out.print(resultado[i] + " ");
+        // Criar um novo vetor para armazenar os elementos maiores que x
+        int[] maiores = new int[count];
+        int index = 0;
+        for (int num : vetor) {
+            if (num > x) {
+                maiores[index++] = num;
+            }
         }
-        System.out.println();
-    }
 
-    public static void EX4() {
-        System.out.println("--Trabalho 3 Bim - Exercicio 4--");
-        Entrada.abrir();
-        boolean[] v = { true, false, true, false, true };
-        boolean[] w = { false, true, false, true, false };
-        boolean[] resultado = aplicarELogico(v, w);
-        mostrarVetorLogicoE(resultado);
-        Entrada.fechar();
-        System.out.println();
-    }
-
-    public static boolean[] aplicarELogico(boolean[] v, boolean[] w) {
-        boolean[] resultado = new boolean[v.length];
-        for (int i = 0; i < v.length; i++) {
-            resultado[i] = v[i] && w[i];
-        }
-        return resultado;
-    }
-
-    public static void mostrarVetorLogicoE(boolean[] v) {
-        for (boolean b : v) {
-            System.out.print(b + " ");
-        }
-    }
-
-    public static void EX5() {
-        System.out.println("--Trabalho 3 Bim - Exercicio 5--");
-        Entrada.abrir();
-        boolean[] v = { true, false, true, false, true };
-        boolean[] w = { false, true, false, true, false };
-        boolean[] resultado = aplicarOuLogico(v, w);
-        mostrarVetorLogicoOU(resultado);
-        Entrada.fechar();
-        System.out.println();
-    }
-
-    public static boolean[] aplicarOuLogico(boolean[] v, boolean[] w) {
-        boolean[] resultado = new boolean[v.length];
-        for (int i = 0; i < v.length; i++) {
-            resultado[i] = v[i] || w[i];
-        }
-        return resultado;
-    }
-
-    public static void mostrarVetorLogicoOU(boolean[] v) {
-        for (boolean b : v) {
-            System.out.print(b + " ");
-        }
-    }
-    public static void EX6() {
-        System.out.println("--Trabalho 3 Bim - Exercicio 6--");
-        Entrada.abrir();
-        int[] v = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        boolean[] mascara = {true, false, true, false, true, false, false, false, false, true};
-        int[] resultado = aplicarMascara(v, mascara);
-        mostrarVetor(resultado);
-        Entrada.fechar();
-        System.out.println();
+        return maiores;
     }
     
-    public static int[] aplicarMascara(int[] v, boolean[] mascara) {
-        int contador = 0;
-        for (boolean m : mascara) {
-            if (m) {
-                contador++;
-            }
-        }
-        int[] resultado = new int[contador];
-        int indice = 0;
-        for (int i = 0; i < mascara.length; i++) {
-            if (mascara[i]) {
-                resultado[indice] = v[i];
-                indice++;
-            }
-        }
-        return resultado; 
-    }
-    public static void mostrarVetor(int[] v) {
-        for (int b : v) {
-            System.out.print(b + " ");
-        }
-    }
-    public static void EX7() {
-        System.out.println("--Trabalho 3 Bim - Exercicio 7--");
-        Entrada.abrir();
-        int[] v1 = {1, 2, 3, 4};
-        int[] v2 = {6, 7, 8, 9};
-        int[] resultado = uniaoVetores(v1, v2);
-        mostrarVetor7(resultado);
-        Entrada.fechar();
-        System.out.println();
-}
-
-    public static int[] uniaoVetores(int[] v1, int[] v2) {
-        int[] vc = new int[v1.length + v2.length];
-        int indice = 0;
-        for (int i = 0; i < v1.length; i++) {
-            vc[indice] = v1[i];
-            indice++;
-        }
-        for (int i = 0; i < v2.length; i++) {
-            vc[indice] = v2[i];
-            indice++;
-        }
-        return vc;
-    }
-    public static void mostrarVetor7(int[] v) {
-        for (int b : v) {
-            System.out.print(b + " ");
-        }
-    }
-       
-    
-    
-//     public static void EX8(){
-//         System.out.println("--Trabalho 3 Bim - Exercicio 8--");
-//         Entrada.abrir();
-//         int[] v1 = {1, 2, 3, 4};
-//         int[] v2 = {6, 7, 8, 9};
-//         int[] resultado = interseccaoVetores(v1, v2);
-//         mostrarVetor(resultado);
-//         Entrada.fechar();
-//         System.out.println();
-//         desisto tbm, não sei! 
-// }
-//     public static void EX9(){
-//         System.out.println("--Trabalho 3 Bim - Exercicio 9--");
-//         Entrada.abrir();
-//         int[] v1 = {1, 2, 3, 4, 5};
-//         int[] v2 = {4, 5, 6, 7, 8};
-//         int[] resultado = diferencaVetores(v1, v2);
-//         mostrarVetor(resultado);
-//         Entrada.fechar();
-//         System.out.println();
-//         desisto tbm, não sei!
-// }
-    public static void EX10(){
-        System.out.println("--Trabalho 3 Bim - Exercicio 10--");
-        Entrada.abrir();
-        int n = 5;
-        int[][] resultado = trianguloPascal(n);
-        mostrarMatriz(resultado);
-        Entrada.fechar();
-        System.out.println();
-    }
-    public static int[][] trianguloPascal(int n) {
-        int[][] triangulo = new int[n][n];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j <= i; j++) {
-                if (j == 0 || j == i) {
-                    triangulo[i][j] = 1;
-                } else {
-                    triangulo[i][j] = triangulo[i - 1][j - 1] + triangulo[i - 1][j];
+        public static int[] filtrarMenores(int[] vetor, int x) {
+            // Contar quantos elementos são menores que x
+            int count = 0;
+            for (int num : vetor) {
+                if (num < x) {
+                    count++;
                 }
             }
-        }
-        return triangulo;
-    }
-    public static void mostrarMatriz(int[][] matriz) {
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                System.out.print(matriz[i][j] + " ");
+    
+            // Criar um novo vetor para armazenar os elementos menores que x
+            int[] menores = new int[count];
+            int index = 0;
+            for (int num : vetor) {
+                if (num < x) {
+                    menores[index++] = num;
+                }
             }
-            System.out.println();
+    
+            return menores;
         }
+        public static boolean[] aplicarELogico(boolean[] va, boolean[] vb) {
+            // Determina o tamanho do menor vetor
+            int tamanho = Math.min(va.length, vb.length);
+    
+            // Cria um novo vetor para armazenar os resultados
+            boolean[] resultado = new boolean[tamanho];
+    
+            // Aplica o operador lógico AND elemento a elemento
+            for (int i = 0; i < tamanho; i++) {
+                resultado[i] = va[i] && vb[i];
+            }
+    
+            return resultado;
+        }
+        public static boolean[] aplicarOuLogico(boolean[] va, boolean[] vb) {
+            // Determina o tamanho do menor vetor
+            int tamanho = Math.min(va.length, vb.length);
+    
+            // Cria um novo vetor para armazenar os resultados
+            boolean[] resultado = new boolean[tamanho];
+    
+            // Aplica o operador lógico OR elemento a elemento
+            for (int i = 0; i < tamanho; i++) {
+                resultado[i] = va[i] || vb[i];
+            }
+    
+            return resultado;
+        }
+        public static int[] aplicarMascara(int[] valores, boolean[] mascara) {
+            // Determina o tamanho do menor vetor para evitar erros
+            int tamanho = Math.min(valores.length, mascara.length);
+    
+            // Conta quantos valores serão incluídos no resultado
+            int count = 0;
+            for (int i = 0; i < tamanho; i++) {
+                if (mascara[i]) {
+                    count++;
+                }
+            }
+    
+            // Cria um novo vetor para armazenar os resultados filtrados
+            int[] resultado = new int[count];
+            int index = 0;
+    
+            // Adiciona os valores que correspondem a `true` na máscara
+            for (int i = 0; i < tamanho; i++) {
+                if (mascara[i]) {
+                    resultado[index++] = valores[i];
+                }
+            }
+    
+            return resultado;
+        }
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public static void mostrarVetor(boolean[] vetor) {
+        System.out.print("[");
+        for (int i = 0; i < vetor.length; i++) {
+            System.out.print(vetor[i]);
+            if (i < vetor.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.print("]");
+    }
+
+    public static void mostrarVetor(int[] vetor) {
+        System.out.print("[");
+        for (int i = 0; i < vetor.length; i++) {
+            System.out.print(vetor[i]);
+            if (i < vetor.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.print("]");
     }
 }
-   
-         
-   
-
