@@ -3,13 +3,13 @@ import trabalhos.T3;
 
 public class CorrecaoT3 {
     public static void main(String[] args) {
-        //q1(); // Mostrar inteiros
+        q1(); // Mostrar inteiros
         //q2(); // Filtrar Maiores
         //q3(); // Filtrar Menores
         //q4(); // Aplicar e lógico
         //q5(); // Aplicar ou lógico
         //q6(); // Aplicar Máscara
-        q7(); //União
+        //q7(); //União
         // q8(); //Interseção
         // q9(); //Diferença
         // q10(); //Triangulo de Pascal
