@@ -1,4 +1,4 @@
-package Trabalhos;
+package trabalhos;
 
 public class Bim2R2 {
 

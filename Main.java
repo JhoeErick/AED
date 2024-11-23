@@ -1,5 +1,5 @@
 import aulas.*;
-import Trabalhos.*;
+import trabalhos.*;
 
 public class Main {
     public static void main(String[] args) {

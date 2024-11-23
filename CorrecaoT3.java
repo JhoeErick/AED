@@ -1,14 +1,14 @@
 
-import Trabalhos.T3;
+import trabalhos.T3;
 
 public class CorrecaoT3 {
     public static void main(String[] args) {
-        q1(); // Mostrar inteiros
-        q2(); // Filtrar Maiores
-        q3(); // Filtrar Menores
-        q4(); // Aplicar e lógico
-        q5(); // Aplicar ou lógico
-        q6(); // Aplicar Máscara
+        //q1(); // Mostrar inteiros
+        //q2(); // Filtrar Maiores
+        //q3(); // Filtrar Menores
+        //q4(); // Aplicar e lógico
+        //q5(); // Aplicar ou lógico
+        //q6(); // Aplicar Máscara
         q7(); //União
         // q8(); //Interseção
         // q9(); //Diferença
@@ -21,7 +21,7 @@ public class CorrecaoT3 {
     public static void q1() {
         System.out.println("## Questão 01 - Mostrar inteiros ##");
         int[] vetor = { 1, 2, 3, 4, 5, 4, 3, 2, 1 };
-        char sep = 'x';
+        char sep = ',';
 
         T3.mostrarInteiros(vetor, sep);
     }
@@ -130,6 +130,7 @@ public class CorrecaoT3 {
 
         System.out.println();
     }
+    
 
     public static void q8(){
     System.out.println("## Questão 08 - Interseção ##");
