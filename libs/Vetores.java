@@ -1,5 +1,6 @@
 
 package libs;
+
 import java.util.Arrays;
 import java.util.Random;
 
@@ -138,30 +139,35 @@ public class Vetores {
         }
         return -1;
     }
-                                                                                                                                                                       //Desenvolva uma função chamada obterIndices, que recebe como parâmetros um vetor de inteiros v e um valor inteiro valor_buscar. A função deve retornar um vetor de inteiros contendo os índices em que o valor valor_buscar aparece no vetor v.
+    // Desenvolva uma função chamada obterIndices, que recebe como parâmetros um
+    // vetor de inteiros v e um valor inteiro valor_buscar. A função deve retornar
+    // um vetor de inteiros contendo os índices em que o valor valor_buscar aparece
+    // no vetor v.
 
     public static int[] obterIndices(int[] v, int valor_buscar) {
         int[] indices = new int[0];
         for (int i = 0; i < v.length; i++) {
             if (v[i] == valor_buscar) {
                 int[] novoIndices = new int[indices.length + 1];
-                
-               }
+
+            }
         }
         return indices;
     }
+
     public static int[] gerarValoresAleatorios(int n, int valor_min, int valor_max) {
         Random random = new Random();
         int[] vetor = new int[n];
 
         for (int i = 0; i < n; i++) {
             // Gera um número aleatório entre min (inclusivo) e max (inclusivo),
-            //   e salva na posição i do vetor
+            // e salva na posição i do vetor
             vetor[i] = random.nextInt(valor_max - valor_min + 1) + valor_min;
         }
-        
+
         return vetor;
     }
+
     public static int BuscaSequencial(int[] v, int x) {
         int i;
         for (i = 0; i < v.length; i++) {
@@ -171,7 +177,8 @@ public class Vetores {
         }
         return -1;
     }
-    public static int buscaBinaria(int[] vetor, int valor_buscar){
+
+    public static int buscaBinaria(int[] vetor, int valor_buscar) {
         int inicio = 0;
         int fim = vetor.length - 1;
         int meio;
@@ -187,9 +194,10 @@ public class Vetores {
         }
         return -1;
     }
+
     public static int[] gerarValoresAleatoriosOrdenado(int n, int valor_min, int valor_max) {
 
-        //Obtém um vetor de valores aleatórios
+        // Obtém um vetor de valores aleatórios
         int[] vetor = gerarValoresAleatorios(n, valor_min, valor_max);
 
         // Ordena o vetor antes de retornar
@@ -198,69 +206,73 @@ public class Vetores {
         return vetor;
     }
 
+    public static void trocar(int[] v, int i, int j) {
+        int tmp;
+        tmp = v[i];
+        v[i] = v[j];
+        v[j] = tmp;
 
-
-public static void trocar(int[]v,int i, int j){
-    int tmp;
-    tmp= v[i];
-    v[i]=v[j];
-    v[j]=tmp;
-    
     }
-    
-    public static void ordenarInsertionSort(int[] v){
-        int i,j;
-        for(i=1;i<v.length;i++){
-            j=i;
-            while(j>0 && v[j]<v[j-1]){
-                trocar(v,j,j-1);
+
+    public static void ordenarInsertionSort(int[] v) {
+        int i, j;
+        for (i = 1; i < v.length; i++) {
+            j = i;
+            while (j > 0 && v[j] < v[j - 1]) {
+                trocar(v, j, j - 1);
                 j--;
             }
         }
     }
-    
-    public static void ordenarSelectionSort(int[] v){
-        int i,j,menor_val,menor_pos;
-        for(i=0;i<v.length-1;i++){
-            menor_val=v[i];
-            menor_pos=i;
-            for(j=i+1;j<v.length;j++){
-                if(v[j]<menor_val){
-                    menor_val=v[j];
-                    menor_pos=j;
+
+    public static void ordenarSelectionSort(int[] v) {
+        int i, j, menor_val, menor_pos;
+        for (i = 0; i < v.length - 1; i++) {
+            menor_val = v[i];
+            menor_pos = i;
+            for (j = i + 1; j < v.length; j++) {
+                if (v[j] < menor_val) {
+                    menor_val = v[j];
+                    menor_pos = j;
                 }
             }
-                trocar(v,i,menor_pos);
-            }
+            trocar(v, i, menor_pos);
         }
-        public static int []countingSort(int[] v){
-            int[] contadores = new int[10];
-            int[] contadores_acumulado = new int[10];
-            int[] resultado = new int[v.length];
-
-            int i;
-            for(i=0; i<v.length; i++){
-                contadores[v[i]]++;
-            }
-            for(i=0; i<contadores.length; i++){
-                contadores_acumulado[i] = contadores[i-1] + contadores_acumulado[i-1];
-            }
-            for(i=0; i<v.length; i++){
-                resultado[contadores_acumulado[v[i]]] = v[i];
-                contadores_acumulado[v[i]]++;
-          
-            }
-            return resultado;
-        }
-        public static void mostrarVetor(int[] v) {
-            int i;
-            System.out.print("[");
-            for (i = 0; i < v.length -1; i++) {
-                System.out.print(v[i] + " ");
-            }
-            System.out.println("]");
-    
-        }
-    
     }
 
+    public static int[] countingSort(int[] v) {
+        int[] contadores = new int[10];
+        int[] contadores_acumulado = new int[10];
+        int[] resultado = new int[v.length];
+
+        int i;
+        for (i = 0; i < v.length; i++) {
+            contadores[v[i]]++;
+        }
+        for (i = 1; i < contadores.length; i++) {
+            contadores_acumulado[i] = contadores[i - 1] + contadores_acumulado[i - 1];
+        }
+        for (i = 0; i < v.length; i++) {
+            resultado[contadores_acumulado[v[i]]] = v[i];
+            contadores_acumulado[v[i]]++;
+
+        }
+        return resultado;
+    }
+
+    public static void mostrarVetor(int[] v) {
+        int i;
+        System.out.print("[");
+        for (i = 0; i < v.length - 1; i++) {
+            System.out.print(v[i] + " ");
+        }
+        System.out.println("]");
+
+    }
+
+    public static int obterValorPos(int x, int k){
+            return(x%Matematica.potencia(10, k)/Matematica.potencia(10, k-1));
+        
+        }
+
+}

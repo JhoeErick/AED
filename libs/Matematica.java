@@ -147,4 +147,13 @@ public class Matematica {
         }
 
     }
+    public static int potencia(int x, int y){
+        int i;
+        int k = x;
+        for(i = 1; i <= y; i++){
+            x = k * x;
+        }
+        return k;
+
+    }
 }
