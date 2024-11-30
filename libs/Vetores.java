@@ -1,6 +1,6 @@
 
 package libs;
-
+import libs.Matematica;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -139,10 +139,6 @@ public class Vetores {
         }
         return -1;
     }
-    // Desenvolva uma função chamada obterIndices, que recebe como parâmetros um
-    // vetor de inteiros v e um valor inteiro valor_buscar. A função deve retornar
-    // um vetor de inteiros contendo os índices em que o valor valor_buscar aparece
-    // no vetor v.
 
     public static int[] obterIndices(int[] v, int valor_buscar) {
         int[] indices = new int[0];
@@ -160,8 +156,7 @@ public class Vetores {
         int[] vetor = new int[n];
 
         for (int i = 0; i < n; i++) {
-            // Gera um número aleatório entre min (inclusivo) e max (inclusivo),
-            // e salva na posição i do vetor
+
             vetor[i] = random.nextInt(valor_max - valor_min + 1) + valor_min;
         }
 
@@ -197,10 +192,10 @@ public class Vetores {
 
     public static int[] gerarValoresAleatoriosOrdenado(int n, int valor_min, int valor_max) {
 
-        // Obtém um vetor de valores aleatórios
+    
         int[] vetor = gerarValoresAleatorios(n, valor_min, valor_max);
 
-        // Ordena o vetor antes de retornar
+
         Arrays.sort(vetor);
 
         return vetor;
