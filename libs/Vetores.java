@@ -233,5 +233,34 @@ public static void trocar(int[]v,int i, int j){
                 trocar(v,i,menor_pos);
             }
         }
+        public static int []countingSort(int[] v){
+            int[] contadores = new int[10];
+            int[] contadores_acumulado = new int[10];
+            int[] resultado = new int[v.length];
+
+            int i;
+            for(i=0; i<v.length; i++){
+                contadores[v[i]]++;
+            }
+            for(i=0; i<contadores.length; i++){
+                contadores_acumulado[i] = contadores[i-1] + contadores_acumulado[i-1];
+            }
+            for(i=0; i<v.length; i++){
+                resultado[contadores_acumulado[v[i]]] = v[i];
+                contadores_acumulado[v[i]]++;
+          
+            }
+            return resultado;
+        }
+        public static void mostrarVetor(int[] v) {
+            int i;
+            System.out.print("[");
+            for (i = 0; i < v.length -1; i++) {
+                System.out.print(v[i] + " ");
+            }
+            System.out.println("]");
+    
+        }
+    
     }
 

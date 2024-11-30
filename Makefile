@@ -1,18 +1,18 @@
-# all: build run
+all: build run
 
-# build:
-# 	javac -d bin Main.java
-# 	javac -d bin aulas/aula*.java
-# 	javac -d bin libs/*
-# 	javac -d bin Trabalhos/T3.java
+build:
+	javac -d bin Main.java
+	javac -d bin aulas/aula*.java
+	javac -d bin libs/*
+	javac -d bin Trabalhos/T3.java
 
-# run:
-# 	@java -cp bin Main
+run:
+	@java -cp bin Main
 
 
-# clear:
-# 	rm bin/*
+clear:
+	rm bin/*
 
-# git:
-# 	git config --global user.email jhoeerickifpr@gmail.com
-# 	git config --global user.name JhoeErick
+git:
+	git config --global user.email jhoeerickifpr@gmail.com
+	git config --global user.name JhoeErick

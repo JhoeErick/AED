@@ -17,8 +17,8 @@ public class Main {
         //aula37.aula();
         //Trabalhos.Bim2R2.testesMDCRec();
         //Trabalhos.T3.CorrecaoT3();
-        aula38.aula();
-    
+        //aula38.aula();
+        aula40.aula();
     
     
 

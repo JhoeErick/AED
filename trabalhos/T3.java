@@ -234,14 +234,7 @@ public class T3 {
         }
         return false;
     }
-    public static boolean existeNoVetor(int[] vetor, int tamanho, int elemento) {
-        for (int i = 0; i < tamanho; i++) {
-            if (vetor[i] == elemento) {
-                return true;
-            }
-        }
-        return false;
-    }
+   
     public static boolean existeNoVetor(int[] vetor, int tamanho, int elemento) {
         for (int i = 0; i < tamanho; i++) {
             if (vetor[i] == elemento) {
