@@ -254,6 +254,26 @@ public class Vetores {
         }
         return resultado;
     }
+    public static int[] countingSort(int []v, int k){
+        int[] contadores = new int[10];
+        int[] contadores_acumulado = new int[10];
+        int[] resultado = new int[v.length];
+
+        int i, p;
+
+        for(i=1; i<v.length; i++){
+           p = Vetores.obterValorPos(v[i], k);
+           contadores[p]++;
+        }
+        for(i=1; i<contadores.length; i++){
+            contadores_acumulado[i] = contadores[i-1] + contadores_acumulado[i-1];
+        }
+        for(i=0; 1<v.length; i++){
+            p = Vetores.obterValorPos(v[i], k);
+            resultado[contadores_acumulado[p]++] = v[i];
+        }
+        return resultado;
+    }
 
     public static void mostrarVetor(int[] v) {
         int i;
@@ -268,6 +288,27 @@ public class Vetores {
     public static int obterValorPos(int x, int k){
             return(x%Matematica.potencia(10, k)/Matematica.potencia(10, k-1));
         
+        }
+    public static int[] radixSort(int [] v){
+        int maior_valor = Vetores.maior(v);
+        int k = 1, i;
+        while (maior_valor > Matematica.potencia(10, k)) {
+            k++;
+        }
+        System.out.println("k= "+ k);
+        for(i=1; i<=4; i++){
+            v = countingSort(v,k);
+        }
+        return v;
+        }
+        public static int maior(int[] v){
+            int maior_valor = v[0];
+            for(int i=1; i<v.length; i++){
+                if(v[i] > maior_valor){
+                    maior_valor = v[i];
+                }
+            }
+            return maior_valor;
         }
 
 }

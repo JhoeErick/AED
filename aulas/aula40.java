@@ -23,7 +23,5 @@ public class aula40 {
 
         System.out.println("-------");
     }
-    public static void ex02() {
-
-    }
+    
 }
