@@ -18,8 +18,9 @@ public class Main {
         //Trabalhos.Bim2R2.testesMDCRec();
         //Trabalhos.T3.CorrecaoT3();
         //aula38.aula();
-        aula40.aula();
-    
+        //aula40.aula();
+        AlgoritmosDeOrdenacao.class.getName();
+      
     
 
     }
