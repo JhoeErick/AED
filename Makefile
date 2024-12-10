@@ -14,5 +14,5 @@ clear:
 	rm bin/*
 
 git:
-	git config --global user.email jhoeerickifpr@gmail.com
-	git config --global user.name JhoeErick
+	git config --global user.email "jhoeerickifpr@gmail.com"
+	git config --global user.name "JhoeErick"
