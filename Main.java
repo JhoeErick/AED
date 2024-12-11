@@ -3,7 +3,7 @@ import trabalhos.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("--Algoritmos e Estrutura de Dados-- \n ----Aula31----");
+        System.out.println("--Algoritmos e Estrutura de Dados-- \n TRABALHO 4 BIM");
         //aula20.aula();
         //aula21.aula();
         //aula23.aula();
@@ -19,7 +19,7 @@ public class Main {
         //Trabalhos.T3.CorrecaoT3();
         //aula38.aula();
         //aula40.aula();
-        AlgoritmosDeOrdenacao.class.getName();
+        T4.trab();
       
     
 
