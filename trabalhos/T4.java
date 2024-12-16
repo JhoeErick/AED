@@ -181,59 +181,75 @@ public class T4 {
 
     // **Main**
     public static void trab() {
-        int[] tamanhos = {100, 1000, 10000, 100000, 1000000, 10000000};
+        int[] tamanhos = {100, 1000, 10000, 100000, 1000000};
         Random random = new Random();
 
-        System.out.println("BUBBLE SORT:");
+        System.out.printf("\n");
         for (int tamanho : tamanhos) {
             int[] vetorOriginal = random.ints(tamanho, 1, 1000000).toArray();
-            System.out.println("Tamanho " + tamanho + ":");
+            System.out.printf("Tamanho %d:\n", tamanho);
 
             // Bubble Sort
-            int[] vetor = vetorOriginal.clone();
+            int[] vetor = new int[vetorOriginal.length];
+            for (int i = 0; i < vetorOriginal.length; i++) {
+                vetor[i] = vetorOriginal[i];
+            }
             long inicio = System.nanoTime();
             bubbleSort(vetor);
             long tempoBubble = System.nanoTime() - inicio;
-            System.out.println("Bubble Sort: " + (tempoBubble / 1e9) + " segundos");
+            System.out.printf("Bubble Sort: %.2f segundos\n", tempoBubble / 1e9);
 
             // Insertion Sort
-            vetor = vetorOriginal.clone();
+            vetor = new int[vetorOriginal.length];
+            for (int i = 0; i < vetorOriginal.length; i++) {
+                vetor[i] = vetorOriginal[i];
+            }
             inicio = System.nanoTime();
             insertionSort(vetor);
             long tempoInsertion = System.nanoTime() - inicio;
-            System.out.println("Insertion Sort: " + (tempoInsertion / 1e9) + " segundos");
+            System.out.printf("Insertion Sort: %.2f segundos\n", tempoInsertion / 1e9);
 
             // Selection Sort
-            vetor = vetorOriginal.clone();
+            vetor = new int[vetorOriginal.length];
+            for (int i = 0; i < vetorOriginal.length; i++) {
+                vetor[i] = vetorOriginal[i];
+            }
             inicio = System.nanoTime();
             selectionSort(vetor);
             long tempoSelection = System.nanoTime() - inicio;
-            System.out.println("Selection Sort: " + (tempoSelection / 1e9) + " segundos");
+            System.out.printf("Selection Sort: %.2f segundos\n", tempoSelection / 1e9);
 
             // Merge Sort
-            vetor = vetorOriginal.clone();
+            vetor = new int[vetorOriginal.length];
+            for (int i = 0; i < vetorOriginal.length; i++) {
+                vetor[i] = vetorOriginal[i];
+            }
             inicio = System.nanoTime();
             mergeSort(vetor);
             long tempoMerge = System.nanoTime() - inicio;
-            System.out.println("Merge Sort: " + (tempoMerge / 1e9) + " segundos");
+            System.out.printf("Merge Sort: %.2f segundos\n", tempoMerge / 1e9);
 
             // Quick Sort
-            vetor = vetorOriginal.clone();
+            vetor = new int[vetorOriginal.length];
+            for (int i = 0; i < vetorOriginal.length; i++) {
+                vetor[i] = vetorOriginal[i];
+            }
             inicio = System.nanoTime();
             quickSort(vetor, 0, vetor.length - 1);
             long tempoQuick = System.nanoTime() - inicio;
-            System.out.println("Quick Sort: " + (tempoQuick / 1e9) + " segundos");
+            System.out.printf("Quick Sort: %.2f segundos\n", tempoQuick / 1e9);
 
             // Radix Sort
-            vetor = vetorOriginal.clone();
+            vetor = new int[vetorOriginal.length];
+            for (int i = 0; i < vetorOriginal.length; i++) {
+                vetor[i] = vetorOriginal[i];
+            }
             inicio = System.nanoTime();
             radixSort(vetor);
             long tempoRadix = System.nanoTime() - inicio;
-            System.out.println("Radix Sort: " + (tempoRadix / 1e9) + " segundos");
+            System.out.printf("Radix Sort: %.2f segundos\n", tempoRadix / 1e9);
 
-            System.out.println(); // Linha em branco entre os tamanhos
+            System.out.printf("\n"); // Linha em branco entre os tamanhos
         }
     }
-    //O termo 1e9 no println é uma notação científica em Java que representa 10^9(1 bilhão). Ele é usado aqui para converter o tempo em nanosegundos (a unidade retornada por System.nanoTime()) para segundos.
-    // Execução do método
 }
