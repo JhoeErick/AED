@@ -184,72 +184,79 @@ public class T4 {
         int[] tamanhos = {100, 1000, 10000, 100000, 1000000};
         Random random = new Random();
 
-        System.out.printf("\n");
-        for (int tamanho : tamanhos) {
-            int[] vetorOriginal = random.ints(tamanho, 1, 1000000).toArray();
+        System.out.println();
+        for (int i = 0; i < tamanhos.length; i++) {
+            int tamanho = tamanhos[i];
+            int[] vetorOriginal = new int[tamanho];
+        
+            // Gera os números aleatórios manualmente
+            for (int j = 0; j < tamanho; j++) {
+                vetorOriginal[j] = random.nextInt(999999) + 1; // Gera números entre 1 e 1000000
+            }
+        
             System.out.printf("Tamanho %d:\n", tamanho);
-
+        
             // Bubble Sort
             int[] vetor = new int[vetorOriginal.length];
-            for (int i = 0; i < vetorOriginal.length; i++) {
-                vetor[i] = vetorOriginal[i];
+            for (int j = 0; j < vetorOriginal.length; j++) {
+                vetor[j] = vetorOriginal[j];
             }
             long inicio = System.nanoTime();
             bubbleSort(vetor);
             long tempoBubble = System.nanoTime() - inicio;
             System.out.printf("Bubble Sort: %.2f segundos\n", tempoBubble / 1e9);
-
+        
             // Insertion Sort
             vetor = new int[vetorOriginal.length];
-            for (int i = 0; i < vetorOriginal.length; i++) {
-                vetor[i] = vetorOriginal[i];
+            for (int j = 0; j < vetorOriginal.length; j++) {
+                vetor[j] = vetorOriginal[j];
             }
             inicio = System.nanoTime();
             insertionSort(vetor);
             long tempoInsertion = System.nanoTime() - inicio;
             System.out.printf("Insertion Sort: %.2f segundos\n", tempoInsertion / 1e9);
-
+        
             // Selection Sort
             vetor = new int[vetorOriginal.length];
-            for (int i = 0; i < vetorOriginal.length; i++) {
-                vetor[i] = vetorOriginal[i];
+            for (int j = 0; j < vetorOriginal.length; j++) {
+                vetor[j] = vetorOriginal[j];
             }
             inicio = System.nanoTime();
             selectionSort(vetor);
             long tempoSelection = System.nanoTime() - inicio;
             System.out.printf("Selection Sort: %.2f segundos\n", tempoSelection / 1e9);
-
+        
             // Merge Sort
             vetor = new int[vetorOriginal.length];
-            for (int i = 0; i < vetorOriginal.length; i++) {
-                vetor[i] = vetorOriginal[i];
+            for (int j = 0; j < vetorOriginal.length; j++) {
+                vetor[j] = vetorOriginal[j];
             }
             inicio = System.nanoTime();
             mergeSort(vetor);
             long tempoMerge = System.nanoTime() - inicio;
             System.out.printf("Merge Sort: %.2f segundos\n", tempoMerge / 1e9);
-
+        
             // Quick Sort
             vetor = new int[vetorOriginal.length];
-            for (int i = 0; i < vetorOriginal.length; i++) {
-                vetor[i] = vetorOriginal[i];
+            for (int j = 0; j < vetorOriginal.length; j++) {
+                vetor[j] = vetorOriginal[j];
             }
             inicio = System.nanoTime();
             quickSort(vetor, 0, vetor.length - 1);
             long tempoQuick = System.nanoTime() - inicio;
             System.out.printf("Quick Sort: %.2f segundos\n", tempoQuick / 1e9);
-
+        
             // Radix Sort
             vetor = new int[vetorOriginal.length];
-            for (int i = 0; i < vetorOriginal.length; i++) {
-                vetor[i] = vetorOriginal[i];
+            for (int j = 0; j < vetorOriginal.length; j++) {
+                vetor[j] = vetorOriginal[j];
             }
             inicio = System.nanoTime();
             radixSort(vetor);
             long tempoRadix = System.nanoTime() - inicio;
             System.out.printf("Radix Sort: %.2f segundos\n", tempoRadix / 1e9);
-
+        
             System.out.printf("\n"); // Linha em branco entre os tamanhos
-        }
+        }        
     }
 }
